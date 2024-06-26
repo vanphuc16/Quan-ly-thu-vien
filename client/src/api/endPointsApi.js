@@ -1,0 +1,26 @@
+import { apiClient } from "./ApiClient";
+
+export const signupApi = (user) => apiClient.post("/user/signup", user);
+export const loginApi = (user) => apiClient.post("/user/login", user);
+export const retrieveUserApi = (id) => apiClient.get(`/user/get-user/${id}`);
+export const updateUserApi = (user) => apiClient.patch("/user/update-user", user);
+export const addBookAPi = (book) => apiClient.post("/book/add-book", book);
+export const retrieveBookApi = (id) => apiClient.get(`/book/get-book/${id}`);
+export const retrieveAllBookApi = (search) => apiClient.get(`/book/get-books?search=${search}`);
+export const updateBookApi = (book) => apiClient.patch("/book/update-book", book);
+export const deleteBookApi = (id) => apiClient.delete(`/book/delete-book/${id}`);
+export const addPreferenceApi = (preference) => apiClient.post("/user/add-preference", preference);
+export const deletePreferenceApi = (user_id, preference) => apiClient.delete(`/user/delete-preference/${user_id}/${preference}`);
+export const retrievePreferencesApi = (user_id) => apiClient.get(`/user/get-preferences/${user_id}`);
+export const retrieveMyBooksApi = (user_id) => apiClient.get(`/book/get-online-read/${user_id}`);
+export const addOnlineBookApi = (info) => apiClient.post("/book/add-online-read", info);
+export const removeOnlineBookApi = (user_id, book_id) => apiClient.delete(`/book/delete-online-read/${user_id}/${book_id}`);
+export const addOfflineBookApi = (info) => apiClient.post("/book/add-offline-read", info);
+export const retrieveOfflineReadApi = () => apiClient.get("/book/get-offline-read");
+export const updateOfflineReadApi = (info) => apiClient.patch("/book/update-offline-read", info);
+export const deleteOfflineReadApi = (user_id,book_id,title) => apiClient.delete(`/book/delete-offline-read/${user_id}/${book_id}/${title}`);
+export const retrieveNotificationsApi = (user_id) => apiClient.get(`/notification/get-notifications/${user_id}`);
+export const addReviewApi = (review) => apiClient.post("/review/add-review", review);
+export const retrieveReviewsApi = () => apiClient.get("/review/get-reviews");
+export const retrieveUserReviewsApi = (user_id) => apiClient.get(`/review/get-reviews/${user_id}`);
+export const deleteReviewApi = (review_id) => apiClient.delete(`/review//delete-review/${review_id}`);
